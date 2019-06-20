@@ -34,7 +34,6 @@
   .comment{
     // 自分のコメント
     .mine{
-      // padding: 10px;
       overflow: hidden;
       .my_info{
         width: 8%;
@@ -96,7 +95,6 @@
     }
     // 他の誰かのコメント
     .other{
-      // padding: 10px;
       overflow: hidden;
 
       .other_user_info{
@@ -116,7 +114,6 @@
           }
         }
         .other_user_name{
-          // float: right;
         }
       }
       .other_user_comment{
