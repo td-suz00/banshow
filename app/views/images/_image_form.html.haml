@@ -1,0 +1,32 @@
+%form
+  .field_image
+    = f.label "投稿する板書"
+
+    #img_field{onclick: "$('#file').click()"}
+      %i.fas.fa-camera.fa-5x
+    = f.file_field :image, id: "file", class: "image", style: "display: none;"
+
+  .form_grade
+    - $grades.each do |grade|
+      .form-check.form-check-inline
+        = f.radio_button("grade", "#{grade}")
+        = grade
+
+  .form_subject
+    - $subjects.each do |subject|
+      .form-check.form-check-inline
+        = f.radio_button("subject", "#{subject}")
+        = subject
+
+  .form_textbook_company
+    - $textbook_companies.each do |textbook_company|
+      .form-check.form-check-inline
+        = f.radio_button("textbook_company", "#{textbook_company}")
+        = textbook_company
+
+  .form_unit
+    = f.label :"単元名"
+    = f.text_field :unit, size: "60"
+
+  .form_submit
+    = f.submit "投稿"

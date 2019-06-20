@@ -1,0 +1,62 @@
+.comments_page
+  .card.mb-3{data: {imageID: @image.id} }
+    .row.no-gutters
+      .col-md-8
+        = image_tag @image.image.url, class: "image"
+
+      .col-md-4
+        .card-body
+          %h5.card-title
+            = @image.user.nickname
+          %p.card-text
+            = @image.grade
+          %p.card-text
+            = @image.subject
+          %p.card-text
+            = @image.unit
+          %p.card-text
+            = @image.textbook_company
+
+          .favorite_area
+            = render partial: 'images/favorite_button', locals: { image: @image }
+
+          %p#time.card-text
+            %small.text-muted
+              = @image.created_at.strftime("%Y-%m-%d %H:%M")
+
+
+  .comments
+    -# 入力スペース
+    = form_tag("/images/#{@image.id}/comments", method: :post, id: "new_comment" ) do
+      .input_area
+        .input_comment
+          %textarea{name: "text", placeholder: "コメントする", id: "textbox"}
+        .submit_button
+          %input{type: "submit", value: "送信", id: "submit_button"}
+
+    .comment
+      - @comments.each do |comment|
+        -if comment.user_id == comment.image.user.id
+          -# 自分のコメント
+          .mine
+            .my_info
+              .my_image
+                = image_tag comment.user.icon_image.url, class: "icon_image"
+              .my_name
+                = comment.user.nickname
+
+            .my_comment
+              = comment.text
+
+        -else
+          -# 他の誰かのコメント
+          .other
+            .other_user_info
+              .other_user_image
+                = image_tag comment.user.icon_image.url, class: "icon_image"
+              .other_user_name
+                = comment.user.nickname
+
+            .other_user_comment
+              = comment.text
+

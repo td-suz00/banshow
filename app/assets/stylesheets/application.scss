@@ -1,0 +1,31 @@
+@import "./reset";
+@import "bootstrap";
+
+html,body{
+  margin: 0;
+  padding: 0;
+
+  @import "./flash";
+  @import "./header";
+  @import "./main";
+  @import "./footer";
+
+  // 検索メニューのスタイル
+  .menu-item__title {
+    display: inline-block;
+  }
+  .require {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    padding: 2px;
+    border-radius: 20%;
+  }
+
+  .require.not {
+    background-color: blue;
+  }
+
+}

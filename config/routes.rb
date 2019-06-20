@@ -11,12 +11,13 @@ Rails.application.routes.draw do
   root 'images#index'
 
   resources :images, except: :show do
-    resources :comments, only: [:new, :create]
-    resources :favorites, only: [:create, :destroy]
 
     collection do
       get :search
     end
+
+    resources :comments, only: [:new, :create]
+    resources :favorites, only: [:create, :destroy]
 
   end
 

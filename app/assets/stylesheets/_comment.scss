@@ -1,0 +1,150 @@
+.comments{
+  border: solid 1px #555;
+  width: 80%;
+  margin: 0 auto 200px auto;
+
+  // 入力スペース
+  .input_area{
+    width: 100%;
+    height: 75px;
+    .input_comment{
+      width: calc(80% - 10px);
+      height: calc(100% - 10px);
+      margin: 5px;
+      float: left;
+      #textbox{
+        width: 100%;
+        height: 100%;
+      }
+
+    }
+    .submit_button{
+      width: calc(20% - 10px);
+      height: calc(100% - 10px);
+      margin: 5px;
+      float: right;
+      #submit_button{
+        width: 100%;
+        height: 100%;
+
+      }
+    }
+  }
+
+  .comment{
+    // 自分のコメント
+    .mine{
+      padding: 10px;
+      overflow: hidden;
+      .my_info{
+        width: 8%;
+        float: right;
+        .my_image{
+          .icon_image{
+            width: 50px;
+            height: 50px;
+            //サイズ指定
+            border-radius: 100px;
+            //画像を丸くする
+            object-fit: cover;
+            //タテヨコ比を変えないままトリミング  
+          }
+        }
+        .my_name{
+        }
+      }
+      .my_comment{
+        min-width: 120px;
+        max-width: 60%;
+        margin: 5px 15px 5px 0;
+        padding: 7px 10px;
+        float: right;
+        position: relative;
+        display: inline-block;
+        border: solid 3px #555;
+        box-sizing: border-box;
+        border-radius: 10px;
+      }
+      .my_comment:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -24px;
+        margin-top: -12px;
+        border: 12px solid transparent;
+        border-left: 12px solid #FFF;
+        z-index: 2;
+      }
+      
+      .my_comment:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -30px;
+        margin-top: -14px;
+        border: 14px solid transparent;
+        border-left: 14px solid #555;
+        z-index: 1;
+      }
+      
+    }
+    // 他の誰かのコメント
+    .other{
+      padding: 10px;
+      overflow: hidden;
+
+      .other_user_info{
+        width: 8%;
+        float: left;
+        margin: 5px 0 5px 15px;
+        .other_user_image{
+          .icon_image{
+            width: 50px;
+            height: 50px;
+            //サイズ指定
+            border-radius: 100px;
+            //画像を丸くする
+            object-fit: cover;
+            //タテヨコ比を変えないままトリミング 
+            float: right; 
+          }
+        }
+        .other_user_name{
+          float: right;
+        }
+      }
+      .other_user_comment{
+        min-width: 120px;
+        max-width: 60%;
+        margin: 5px 0 5px 15px;
+        padding: 7px 10px;
+        float: left;
+        position: relative;
+        display: inline-block;
+        border: solid 3px #555;
+        box-sizing: border-box;
+        border-radius: 10px;
+      }
+      .other_user_comment:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -24px;
+        margin-top: -12px;
+        border: 12px solid transparent;
+        border-right: 12px solid #FFF;
+        z-index: 2;
+      }
+      .other_user_comment:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -30px;
+        margin-top: -14px;
+        border: 14px solid transparent;
+        border-right: 14px solid #555;
+        z-index: 1;
+      }
+    }
+  }
+}

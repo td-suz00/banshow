@@ -1,0 +1,16 @@
+!!!
+%html{:lang => "ja"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title Bootstrap Sample
+    / BootstrapのCSS読み込み
+    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}/
+    / jQuery読み込み
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"}
+    / BootstrapのJS読み込み
+    %script{:src => "js/bootstrap.min.js"}
+  %body
+    = yield

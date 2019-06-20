@@ -1,0 +1,33 @@
+header{
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  .navbar.navbar-expand-lg.navbar-light.bg-light{
+    .navbar-brand{
+      font-size: 50px;
+    }
+    #navbarNav{
+      position: relative;
+      .navbar-nav{
+        position: absolute;
+        right: 0;
+        .nav-item{
+          font-size: 20px;
+          .nav-link{
+            margin-right: 50px;
+            .icon_image{
+              width: 50px;
+              height: 50px;
+              //サイズ指定
+              border-radius: 100px;
+              //画像を丸くする
+              object-fit: cover;
+              //タテヨコ比を変えないままトリミング
+            }
+          }
+        }
+      }
+    }
+  }
+}
