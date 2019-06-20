@@ -34,11 +34,12 @@
   .comment{
     // 自分のコメント
     .mine{
-      padding: 10px;
+      // padding: 10px;
       overflow: hidden;
       .my_info{
         width: 8%;
         float: right;
+        margin-right: 15px;
         .my_image{
           .icon_image{
             width: 50px;
@@ -47,7 +48,7 @@
             border-radius: 100px;
             //画像を丸くする
             object-fit: cover;
-            //タテヨコ比を変えないままトリミング  
+            //タテヨコ比を変えないままトリミング
           }
         }
         .my_name{
@@ -75,7 +76,7 @@
         border-left: 12px solid #FFF;
         z-index: 2;
       }
-      
+
       .my_comment:after {
         content: "";
         position: absolute;
@@ -86,17 +87,22 @@
         border-left: 14px solid #555;
         z-index: 1;
       }
-      
+
+    }
+    .my_comment_time {
+      font-size: 14px;
+      margin: 0 15px 20px 0;
+      text-align: right;
     }
     // 他の誰かのコメント
     .other{
-      padding: 10px;
+      // padding: 10px;
       overflow: hidden;
 
       .other_user_info{
         width: 8%;
         float: left;
-        margin: 5px 0 5px 15px;
+        margin-left: 15px;
         .other_user_image{
           .icon_image{
             width: 50px;
@@ -105,12 +111,12 @@
             border-radius: 100px;
             //画像を丸くする
             object-fit: cover;
-            //タテヨコ比を変えないままトリミング 
-            float: right; 
+            //タテヨコ比を変えないままトリミング
+            float: right;
           }
         }
         .other_user_name{
-          float: right;
+          // float: right;
         }
       }
       .other_user_comment{
@@ -145,6 +151,10 @@
         border-right: 14px solid #555;
         z-index: 1;
       }
+    }
+    .other_user_comment_time {
+      font-size: 14px;
+      margin: 0 0 20px 15px;
     }
   }
 }
