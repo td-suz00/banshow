@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
-  protect_from_forgery except: :create
   before_action :authenticate_user!, except: :index
+  protect_from_forgery except: :destroy
 
   $grades = ["１年生", "２年生", "３年生", "４年生", "５年生", "６年生"]
   $subjects = ["国語", "社会", "算数", "理科"]
@@ -44,7 +44,7 @@ class ImagesController < ApplicationController
     image = Image.find(params[:id])
     if image.update(image_params)
       flash[:notice] = '編集が完了しました'
-      redirect_to mypages_path
+      redirect_to user_mypages_path(current_user)
     else
       flash[:alert] = '未入力項目があります'
       redirect_back(fallback_location: root_path)
@@ -54,12 +54,14 @@ class ImagesController < ApplicationController
 
   def destroy
     image = Image.find(params[:id])
-    image.destroy
-    redirect_to action: :show
+    if image.user_id == current_user.id
+      image.destroy
+    end
+    flash[:notice] = '板書を削除しました'
+    redirect_to user_mypages_path(current_user)
   end
 
   def search
-    # binding.pry
     if search_params[:grade] && search_params[:subject] && search_params[:unit]
       # まず単元名であいまい検索
       unit_searched_images = Image.where("unit LIKE ?", "%#{search_params[:unit]}%")
