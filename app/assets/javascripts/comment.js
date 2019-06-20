@@ -7,13 +7,16 @@ $(function(){
                       <img src=${data.user_icon_image} class=icon_image>
                     </div>
                     <div class = my_name>
-                      <p> ${data.user_nickname} </p>
+                      ${data.user_nickname}
                     </div>
                   </div>
 
                   <div class = my_comment>
-                    <p> ${data.text} </p>
+                    ${data.text}
                   </div>
+                </div>
+                <div class = my_comment_time >
+                  ${data.created_at}
                 </div>
               `
     return html
@@ -27,13 +30,15 @@ $(function(){
                     <img src=${data.user_icon_image} class=icon_image>
                     </div>
                     <div class = other_user_name>
-                      <p> ${data.user_nickname} </p>
+                      ${data.user_nickname}
                     </div>
                   </div>
-
                   <div class = other_user_comment>
-                    <p> ${data.text} </p>
+                    ${data.text}
                   </div>
+                </div>
+                <div class = other_user_comment_time >
+                  ${data.created_at}
                 </div>
               `
     return html
@@ -63,6 +68,7 @@ $(function(){
         var html = buildOtherComment(data);
         $('.comment').prepend(html)
       }
+      $('#new_comment')[0].reset()
     })
 
     .fail(function(){

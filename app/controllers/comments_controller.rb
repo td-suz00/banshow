@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def new
     @image = Image.find(params[:image_id])
-    @comments = Comment.where(image_id: @image.id)
+    @comments = Comment.where(image_id: @image.id).order("created_at DESC")
     @favorites = Favorite.where(user_id: current_user.id)
   end
 
