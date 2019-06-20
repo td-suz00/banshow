@@ -1,0 +1,40 @@
+= form_tag("/images/search", method: :GET) do
+  .menu-wrap.hide-menu
+    %ul.menu-list
+      %li.menu-item
+        .menu-item__title 学年
+        .require 必須
+      - $grades.each do |grade|
+        .form-check.form-check-inline
+          = radio_button "image", "grade", "#{grade}"
+          = grade
+
+      %li.menu-item
+        .menu-item__title 教科
+        .require 必須
+      - $subjects.each do |subject|
+        .form-check.form-check-inline
+          = radio_button "image", "subject", "#{subject}"
+          = subject
+
+      %li.menu-item
+        .menu-item__title 教科書会社
+        .require.not 任意
+      - $textbook_companies.each do |textbook_company|
+        .form-check.form-check-inline
+          = radio_button "image", "textbook_company", "#{textbook_company}"
+          = textbook_company
+
+      %li.menu-item
+        .menu-item__title 単元名
+        .require 必須
+      .form_unit
+        = text_field :image, :unit, size: "60"
+
+      %li.menu-item
+      .form_submit
+        = submit_tag "検索"
+
+      %li.menu-item
+      = button_tag type: "button", id: "menu-close" do
+        閉じる

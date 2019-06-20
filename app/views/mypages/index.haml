@@ -1,0 +1,28 @@
+%h1 マイページ
+.card.mb-3
+  -@images.each do |image|
+    .row.no-gutters
+      .col-md-8
+        = image_tag image.image.url, class: "image"
+
+      .col-md-3
+        .card-body
+          %h5.card-title
+            = image.user.nickname
+          %p.card-text
+            = image.grade
+          %p.card-text
+            = image.subject
+          %p.card-text
+            = image.unit
+          %p.card-text
+            = image.textbook_company
+
+          %p#time.card-text
+            %small.text-muted
+              = image.created_at.strftime("%Y-%m-%d %H:%M")
+      .col-md-1
+        .user_edit
+          = link_to '編集', "/images/#{image.id}/edit", method: :get
+        .user_destroy
+          = link_to '削除', "/images/#{image.id}", method: :delete, data: { confirm: '本当に削除しますか？' }

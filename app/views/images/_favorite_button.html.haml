@@ -1,0 +1,13 @@
+.favorite_button
+  -if user_signed_in? && image.user_id != current_user.id
+    -if Favorite.exists?(user_id: current_user.id, image_id: image.id)
+      = button_to "お気に入り解除", image_favorite_path(image, favorites), method: :delete, id: "favorite_delete_button"
+    -else
+      = button_to "お気に入り", image_favorites_path(image), method: :post, id: "favorite_button"
+
+.favorite_count
+  - if image.favorite_count.to_i >= 1
+    %i.fas.fa-heart.my-red
+      = image.favorite_count
+  - else
+    %i.fas.fa-heart.my-gray

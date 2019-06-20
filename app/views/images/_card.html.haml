@@ -1,0 +1,33 @@
+.card.mb-3
+  -images.each do |image|
+    .row.no-gutters
+      .col-md-8
+        %a{"data-lightbox" => "demo", href: image.image.url, rel: "lightbox"}
+          = image_tag image.image.url, class: "image"
+
+        -# %div{class: "fullscreen-image", "data-image": image.image.url}
+        -#   %img{src: image.image.url}
+
+      .col-md-4
+        .card-body
+          %h5.card-title
+            = image.user.nickname
+          %p.card-text
+            = image.grade
+          %p.card-text
+            = image.subject
+          %p.card-text
+            = image.unit
+          %p.card-text
+            = image.textbook_company
+
+          -if user_signed_in? && image.user_id != current_user.id
+            .favorite_area
+              = render partial: 'images/favorite_button', locals: { image: image, favorites: favorites }
+            .comment
+              = link_to "コメントする", new_image_comment_path(image)
+          %p#time.card-text
+            %small.text-muted
+              = image.created_at.strftime("%Y-%m-%d %H:%M")
+.pagenate
+  = paginate(images)

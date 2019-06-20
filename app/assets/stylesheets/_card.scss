@@ -1,0 +1,69 @@
+.card.mb-3{
+  .row.no-gutters{
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.125);
+    .col-md-8{
+      width: 537px;
+      height: 260px;
+      position: relative;
+      .image {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+      }
+    }
+    .col-md-3, .col-md-4{
+      .card-body{
+        .card-text{
+          margin-left: 20px;
+        }
+        .favorite_area{
+          margin-left: 20px;
+          .favorite_button{
+            float: left;
+            margin-right: 20px;
+          }
+          .favorite_count{
+            float: left;
+            .fas.fa-heart.my-red{
+              color: red;
+            }
+            .fas.fa-heart.my-gray{
+              color: gray;
+            }
+          }
+        }
+        .comment{
+          margin-left: 20px;
+          clear: both;
+        }
+        #time{
+          text-align: right;
+          clear: both;
+        }
+      }
+    }
+  }
+
+  .col-md-1{
+    text-align: center;
+    .user_edit{
+      height: 50%;
+      line-height: 112.5px;
+    }
+    .user_destroy{
+      height: 50%;
+      line-height: 112.5px;
+    }
+  }
+}
+
