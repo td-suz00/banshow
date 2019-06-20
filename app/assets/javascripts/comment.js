@@ -58,17 +58,11 @@ $(function(){
       // 送信者がimageのuserの場合と、それ以外で場合分け
       if(data.comment_user_id==data.image_user_id){
         var html = buildMyComment(data);
-        $('.comment').append(html)
+        $('.comment').prepend(html)
       }else{
         var html = buildOtherComment(data);
-        $('.comment').append(html)
+        $('.comment').prepend(html)
       }
-      
-      // 投稿メッセージまでスクロール
-      $('.comments_page').animate({scrollTop: $('.comments_page')[0].scrollHeight}, 'fast');
-      console.log(data)
-      // テキストボックスを空に
-      $('#new_comment')[0].reset()
     })
 
     .fail(function(){

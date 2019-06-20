@@ -18,7 +18,7 @@
             = @image.textbook_company
 
           .favorite_area
-            = render partial: 'images/favorite_button', locals: { image: @image }
+            = render partial: 'images/favorite_button', locals: { image: @image, favorites: @favorites }
 
           %p#time.card-text
             %small.text-muted
