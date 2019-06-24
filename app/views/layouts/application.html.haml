@@ -54,6 +54,8 @@
                   = current_user.nickname
                   -if current_user.icon_image.present?
                     = image_tag current_user.icon_image.url, class: "icon_image"
+                  -else
+                    = image_tag "no_avator.png", class: "icon_image"
 
               %li.nav-item
                 %a.nav-link{href: "/users/sign_out", method: :delete} ログアウト
