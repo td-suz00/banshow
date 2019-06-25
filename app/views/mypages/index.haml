@@ -17,7 +17,8 @@
             = image.unit
           %p.card-text
             = image.textbook_company
-
+          .comment
+            = link_to "コメントする", new_image_comment_path(image)
           %p#time.card-text
             %small.text-muted
               = image.created_at.strftime("%Y-%m-%d %H:%M")
