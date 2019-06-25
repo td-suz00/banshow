@@ -1,5 +1,5 @@
 %h1 検索結果
 - if @images.length != 0
-  = render partial: 'images/card', locals: { images: @images }
+  = render partial: 'images/card', locals: { images: @images, favorites: @favorites }
 - else
   %h5 条件に合う板書は見つかりませんでした

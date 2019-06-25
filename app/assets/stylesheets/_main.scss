@@ -6,25 +6,24 @@ main{
   @import "./comment";
 
 
-  // ポップアップメニュー
+  // 検索メニュー
   .menu-wrap {
     position: fixed;
     /* 他の要素より上に来るようz-indexを指定 */
-    z-index: 1;
+    z-index: 20;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    padding: 20px;
+    height: 100vh;
+    padding: 5%;
     text-align: center;
     background: #fff;
     opacity: 0.9;
-    /* ポップアップメニューが展開する（閉じる）起点を指定 */
+    /* 検索メニューが展開する（閉じる）起点を指定 */
     transform-origin: center;
-    /* ポップアップの速度を指定 */
+    /* 速度を指定 */
     transition: all 500ms ease;
     .menu-list{
-      padding: 10% 0;
       .menu-item,.form_submit_unit,.form_submit,#menu-close.menu.menu-close{
         margin-top: 20px;
         font-size: 20px;
@@ -32,7 +31,7 @@ main{
     }
   }
   .hide-menu {
-    /* ポップアップメニューが展開する（閉じる）方向を指定 */
+    /* 検索メニューが展開する（閉じる）方向を指定 */
     transform: scale(0, 0);
   }
 }
