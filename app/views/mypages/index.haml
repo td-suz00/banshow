@@ -26,3 +26,6 @@
           = link_to '編集', "/images/#{image.id}/edit", method: :get
         .user_destroy
           = link_to '削除', "/images/#{image.id}", method: :delete, data: { confirm: '本当に削除しますか？' }
+
+.pagenate
+  = paginate(@images)
