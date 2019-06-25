@@ -63,14 +63,14 @@ class ImagesController < ApplicationController
 
   def search
     @favorites = Favorite.where(user_id: current_user.id)
-    
+
     if search_params[:grade] && search_params[:subject] && search_params[:unit]
       # まず単元名であいまい検索
       unit_searched_images = Image.where("unit LIKE ?", "%#{search_params[:unit]}%")
 
       # 教科書会社が選ばれているかどうかで条件分岐
       if params[:image][:textbook_company]
-        @images = unit_searched_images.where(grade: search_params[:grade]).where(subject: search_params[:subject]).where(textbook_company: parmas[:image][:textbook_company]).page(params[:page]).per(10)
+        @images = unit_searched_images.where(grade: search_params[:grade]).where(subject: search_params[:subject]).where(textbook_company: params[:image][:textbook_company]).page(params[:page]).per(10)
       else
         @images = unit_searched_images.where(grade: search_params[:grade]).where(subject: search_params[:subject]).page(params[:page]).per(10)
       end
