@@ -41,7 +41,7 @@
           .mine
             .my_info
               .my_image
-                -if current_user.icon_image.present?
+                -if comment.user.icon_image.present?
                   = image_tag comment.user.icon_image.url, class: "icon_image"
                 -else
                   = image_tag "no_avator.png", class: "icon_image"
