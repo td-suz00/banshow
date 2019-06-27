@@ -86,3 +86,4 @@ gem 'kaminari-bootstrap'
 gem 'gon'
 gem "aws-sdk-s3", require: false
 gem "fog-aws"
+gem 'aws-sdk'

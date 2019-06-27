@@ -43,7 +43,7 @@ class ImagesController < ApplicationController
                              access_key_id: ENV['AWS_ACCESS_KEY_ID'],
                              secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
                              )
-      binary_data = client.get_object(bucket: 'upload-banshow-images', key: image.image.file.path).body.read
+      binary_data = client.get_object(bucket: 'upload-banshow-images', key: @image.image.file.path).body.read
       gon.image = Base64.strict_encode64(binary_data)
       
     else
