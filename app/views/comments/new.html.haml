@@ -57,7 +57,10 @@
           .other
             .other_user_info
               .other_user_image
-                = image_tag comment.user.icon_image.url, class: "icon_image"
+                -if comment.user.icon_image.present?
+                  = image_tag comment.user.icon_image.url, class: "icon_image"
+                -else
+                  = image_tag "no_avator.png", class: "icon_image"
               .other_user_name
                 = comment.user.nickname
             .other_user_comment
