@@ -41,7 +41,10 @@
           .mine
             .my_info
               .my_image
-                = image_tag comment.user.icon_image.url, class: "icon_image"
+                -if current_user.icon_image.present?
+                  = image_tag comment.user.icon_image.url, class: "icon_image"
+                -else
+                  = image_tag "no_avator.png", class: "icon_image"
               .my_name
                 = comment.user.nickname
             .my_comment
