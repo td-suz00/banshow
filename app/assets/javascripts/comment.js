@@ -26,7 +26,7 @@ $(function(){
                   <div class = mine>
                     <div class = my_info>
                       <div class = my_image>
-                        <img src="no_avator.png" class=icon_image>
+                        <img src="/assets/no_avator.png" class=icon_image>
                       </div>
                       <div class = my_name>
                         ${data.user_nickname}
@@ -71,7 +71,7 @@ $(function(){
                   <div class = other>
                     <div class = other_user_info>
                       <div class = other_user_image>
-                        <img src="no_avator.png" class=icon_image>
+                        <img src="/assets/no_avator.png" class=icon_image>
                       </div>
                       <div class = other_user_name>
                         ${data.user_nickname}
