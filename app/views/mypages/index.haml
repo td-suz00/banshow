@@ -24,7 +24,7 @@
               = image.created_at.strftime("%Y-%m-%d %H:%M")
       .col-md-1
         .user_edit
-          = link_to '編集', "/images/#{image.id}/edit", method: :get
+          = link_to '編集', "/images/#{image.id}/edit"
         .user_destroy
           = link_to '削除', "/images/#{image.id}", method: :delete, data: { confirm: '本当に削除しますか？' }
 
