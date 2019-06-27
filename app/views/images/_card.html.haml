@@ -24,8 +24,9 @@
           -if user_signed_in? && image.user_id != current_user.id
             .favorite_area
               = render partial: 'images/favorite_button', locals: { image: image, favorites: favorites }
-          .comment
-            = link_to "コメントする", new_image_comment_path(image)
+          -if user_signed_in?
+            .comment
+              = link_to "コメントする", new_image_comment_path(image)
           %p#time.card-text
             %small.text-muted
               = image.created_at.strftime("%Y-%m-%d %H:%M")
