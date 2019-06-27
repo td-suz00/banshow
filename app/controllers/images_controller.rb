@@ -34,9 +34,26 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
 
     # @image.imageをバイナリーデータにしてビューで表示できるようにする
+
     require 'base64'
-    binary_data = File.read(@image.image.file.file)
-    gon.image = Base64.strict_encode64(binary_data)
+    require 'aws-sdk'
+    if Rails.env.production?
+      client = Aws::S3::Client.new(
+                             region: 'ap-northeast-1',
+                             access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                             secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                             )
+      binary_data = client.get_object(bucket: 'upload-banshow-images', key: image.image_url.file.path).body.read
+      gon.image << Base64.strict_encode64(binary_data)
+      
+    else
+      binary_data = File.read(@image.image.file.file)
+      gon.image = Base64.strict_encode64(binary_data)
+    end
+
+    # require 'base64'
+    # binary_data = File.read(@image.image.file.file)
+    # gon.image = Base64.strict_encode64(binary_data)
 
   end
 
