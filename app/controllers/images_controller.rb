@@ -51,10 +51,6 @@ class ImagesController < ApplicationController
       gon.image = Base64.strict_encode64(binary_data)
     end
 
-    # require 'base64'
-    # binary_data = File.read(@image.image.file.file)
-    # gon.image = Base64.strict_encode64(binary_data)
-
   end
 
   def update
