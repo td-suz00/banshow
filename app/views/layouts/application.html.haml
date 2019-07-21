@@ -60,6 +60,10 @@
               %li.nav-item
                 %a.nav-link{href: "/users/sign_out", method: :delete} ログアウト
             - else
+              %li.test-account
+                %p 【テスト用アカウント】
+                %p.address メールアドレス: test@test
+                %p.pass パスワード: aaaaaa（aを６つ）
               %li.nav-item
                 %a.nav-link{href: "/users/sign_in"} ログイン
               %li.nav-item
