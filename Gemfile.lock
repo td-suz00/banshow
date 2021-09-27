@@ -855,6 +855,7 @@ GEM
     erubis (2.7.0)
     excon (0.64.0)
     execjs (2.7.0)
+    ffi (1.11.1)
     ffi (1.11.1-x64-mingw32)
     fog-aws (3.5.1)
       fog-core (~> 2.1)
@@ -941,14 +942,17 @@ GEM
     mime-types-data (3.2019.0331)
     mimemagic (0.3.3)
     mini_mime (1.0.1)
-    mini_portile2 (2.4.0)
     minitest (5.11.3)
+    msgpack (1.3.0)
     msgpack (1.3.0-x64-mingw32)
     multi_json (1.13.1)
     nio4r (2.3.1)
-    nokogiri (1.10.3-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.12.5-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.1.4)
     pg (1.1.4-x64-mingw32)
     popper_js (1.14.5)
     pry (0.12.2)
@@ -958,6 +962,7 @@ GEM
       pry (>= 0.10.4)
     public_suffix (3.1.0)
     puma (3.12.1)
+    racc (1.5.2)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -1061,6 +1066,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   aws-sdk
